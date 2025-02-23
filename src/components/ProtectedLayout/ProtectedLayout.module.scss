@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main {
+  flex: 1;
+  margin-left: 250px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  padding: 1rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#modal-portal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+
+  & > * {
+    pointer-events: auto;
+  }
+} 

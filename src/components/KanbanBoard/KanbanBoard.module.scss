@@ -1,0 +1,121 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  overflow-x: auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+}
+
+.column {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 280px;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.taskWrapper {
+  position: relative;
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+.taskContent {
+  position: relative;
+
+  &:hover {
+    .deleteButton {
+      opacity: 1;
+    }
+  }
+}
+
+.deleteButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 2;
+
+  &:hover {
+    color: var(--error);
+    background-color: var(--error-light);
+  }
+}
+
+.task {
+  background-color: var(--bg-primary);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: var(--bg-hover);
+  }
+
+  h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+  }
+
+  .description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.taskFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.priorityLOW { color: #22c55e; }
+.priorityMEDIUM { color: #eab308; }
+.priorityHIGH { color: #f97316; }
+.priorityURGENT { color: #dc2626; }
+
+.date {
+  color: var(--text-secondary);
+} 

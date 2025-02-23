@@ -1,0 +1,151 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+
+  &:hover {
+    color: var(--text-primary);
+  }
+}
+
+.taskDetails {
+  h2 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .description {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+  }
+}
+
+.info {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: var(--bg-primary);
+  border-radius: 4px;
+
+  span:first-child {
+    color: var(--text-secondary);
+  }
+}
+
+.field {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+    }
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+}
+
+.editButton, .saveButton {
+  background-color: var(--accent-primary);
+  color: white;
+
+  &:hover {
+    background-color: var(--accent-secondary);
+  }
+}
+
+.deleteButton {
+  background-color: #dc2626;
+  color: white;
+
+  &:hover {
+    background-color: #b91c1c;
+  }
+}
+
+.cancelButton {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+
+  &:hover {
+    background-color: var(--bg-secondary);
+  }
+}
+
+.priorityLOW { color: #22c55e; }
+.priorityMEDIUM { color: #eab308; }
+.priorityHIGH { color: #f97316; }
+.priorityURGENT { color: #dc2626; }
+
+.statusTODO { color: #eab308; }
+.statusIN_PROGRESS { color: #3b82f6; }
+.statusDONE { color: #22c55e; } 

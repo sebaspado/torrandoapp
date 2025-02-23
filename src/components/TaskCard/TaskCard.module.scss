@@ -1,0 +1,75 @@
+.card {
+  background: white;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  @media (max-width: 480px) {
+    padding: 0.8rem;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &.dragging {
+    transform: rotate(3deg) scale(1.02);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.priorityLOW { color: #22c55e; }
+.priorityMEDIUM { color: #eab308; }
+.priorityHIGH { color: #f97316; }
+.priorityURGENT { color: #dc2626; }
+
+.date {
+  color: var(--text-secondary);
+}
+
+.taskCard {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+} 

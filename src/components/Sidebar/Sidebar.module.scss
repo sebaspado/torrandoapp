@@ -1,0 +1,140 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: var(--bg-dark);
+  padding:1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem;
+  }
+}
+
+.logo {
+  margin-bottom: 2rem;
+  
+  h1 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 5px 1rem;
+  border-radius: 5px;
+  color: #ffffff80;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  &.active {
+    background-color: var(--accent-primary);
+    color: white;
+  }
+}
+
+.userSection {
+  padding-top: 1rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  .userName {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .userEmail {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+}
+
+.signOutButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--bg-hover);
+  border: none;
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: var(--error);
+    color: white;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 0;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    gap: 0.25rem;
+  }
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+
+  &.active {
+    background: var(--accent-light);
+    color: var(--accent-primary);
+  }
+
+  svg {
+    width: 1.2rem;
+    margin-right: 0.8rem;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+      width: 1rem;
+    }
+  }
+} 

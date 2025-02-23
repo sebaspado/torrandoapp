@@ -1,0 +1,24 @@
+.chartContainer {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  :global(.apexcharts-legend) {
+    justify-content: center;
+  }
+
+  :global(.apexcharts-tooltip) {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+  }
+} 

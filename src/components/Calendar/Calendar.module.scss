@@ -1,0 +1,232 @@
+.calendarWrapper {
+  background-color: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  height: calc(100vh - 120px);
+  overflow: hidden;
+
+  :global {
+    .fc {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    // Header styling
+    .fc-toolbar {
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem !important;
+
+      .fc-toolbar-title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--text-primary);
+      }
+
+      .fc-button-group {
+        gap: 4px;
+      }
+    }
+
+    // Button styling
+    .fc-button {
+      background: var(--bg-secondary) !important;
+      border: 1px solid var(--border-color) !important;
+      color: var(--text-primary) !important;
+      padding: 6px 12px !important;
+      font-weight: 500 !important;
+      text-transform: capitalize !important;
+      box-shadow: none !important;
+      transition: all 0.2s;
+
+      &:hover {
+        background: var(--bg-hover) !important;
+        border-color: var(--border-color) !important;
+      }
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+
+    .fc-button-active {
+      background: var(--accent-light) !important;
+      color: var(--accent-primary) !important;
+      border-color: var(--accent-light) !important;
+    }
+
+    // Calendar grid styling
+    .fc-theme-standard {
+      th, td {
+        border-color: var(--border-color) !important;
+      }
+
+      .fc-scrollgrid {
+        border: none !important;
+      }
+    }
+
+    // Day header styling
+    .fc-col-header-cell {
+      padding: 8px 0;
+      background: transparent;
+
+      .fc-col-header-cell-cushion {
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.875rem;
+        text-decoration: none;
+        padding: 4px;
+      }
+    }
+
+    // Day cell styling
+    .fc-daygrid-day {
+      &.fc-day-today {
+        background: var(--accent-light) !important;
+      }
+
+      .fc-daygrid-day-number {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 0.875rem;
+        padding: 8px;
+      }
+    }
+
+    // Event styling
+    .fc-event {
+      border: none;
+      border-radius: 4px;
+      padding: 2px 4px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      .fc-event-main {
+        padding: 2px 4px;
+      }
+
+      .fc-event-time {
+        font-size: 0.75rem;
+        opacity: 0.9;
+      }
+    }
+
+    // Priority colors
+    .priorityLOW {
+      background-color: var(--success) !important;
+      border-color: var(--success) !important;
+    }
+
+    .priorityMEDIUM {
+      background-color: var(--warning) !important;
+      border-color: var(--warning) !important;
+    }
+
+    .priorityHIGH {
+      background-color: var(--accent-primary) !important;
+      border-color: var(--accent-primary) !important;
+    }
+
+    .priorityURGENT {
+      background-color: var(--error) !important;
+      border-color: var(--error) !important;
+    }
+
+    // Status styling
+    .statusDONE {
+      opacity: 0.6;
+      text-decoration: line-through;
+    }
+
+    // Time grid specific styling
+    .fc-timegrid {
+      .fc-timegrid-slot {
+        height: 48px !important;
+      }
+
+      .fc-timegrid-slot-label {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+      }
+    }
+
+    // More events popover
+    .fc-more-popover {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+      .fc-popover-header {
+        background: transparent;
+        padding: 8px 12px;
+        font-size: 0.875rem;
+        color: var(--text-primary);
+      }
+
+      .fc-popover-body {
+        padding: 8px;
+      }
+    }
+
+    // List view styling
+    .fc-list {
+      border: none !important;
+
+      .fc-list-day-cushion {
+        background: var(--bg-hover) !important;
+        padding: 8px 16px !important;
+      }
+
+      .fc-list-event {
+        &:hover {
+          background: var(--bg-hover) !important;
+        }
+
+        td {
+          padding: 8px 16px !important;
+        }
+      }
+    }
+  }
+}
+
+// Custom event styles
+.event {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+.task {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.statusTODO {
+  opacity: 0.7;
+}
+
+.statusIN_PROGRESS {
+  border-style: dashed !important;
+}
+
+.statusREVIEW {
+  border-style: dotted !important;
+} 
